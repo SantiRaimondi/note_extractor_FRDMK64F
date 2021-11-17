@@ -5,13 +5,14 @@
 * Interleaved:		N/A
 * Signed:			No
 * No. of channels:	1
+* Fs = 8 [k/s]
 * No. of samples:	104000
 * Bits/Sample:		16
 **********************************************************************/
 
 #define NUM_ELEMENTS 104000
 
-const unsigned short data[NUM_ELEMENTS] = {
+unsigned short data[NUM_ELEMENTS] = {
 32767, 32767, 32768, 32768, 32768, 32768, 32768, 32768, /* 0-7 */
 32768, 32767, 32768, 32768, 32767, 32767, 32768, 32768, /* 8-15 */
 32768, 32768, 32768, 32768, 32767, 32768, 32768, 32768, /* 16-23 */
