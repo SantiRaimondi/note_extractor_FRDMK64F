@@ -31,25 +31,25 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: note_extractor_FRDMK64F.axf
+all: fft_note_extractor.axf
 
 # Tool invocations
-note_extractor_FRDMK64F.axf: $(OBJS) $(USER_OBJS)
+fft_note_extractor.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"C:\Users\santi\Desktop\Datardos\Facultad\Segundo semestre Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS\DSP" -Xlinker -Map="note_extractor_FRDMK64F.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T "note_extractor_FRDMK64F_Debug.ld" -o "note_extractor_FRDMK64F.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"C:\Users\santi\Desktop\Datardos\Facultad\Segundo semestre Quinto\DSP\workspace\fft_note_extractor\CMSIS\DSP" -Xlinker -Map="fft_note_extractor.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T fft_note_extractor_Debug.ld -o "fft_note_extractor.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) note_extractor_FRDMK64F.axf
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) fft_note_extractor.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "note_extractor_FRDMK64F.axf"; # arm-none-eabi-objcopy -v -O binary "note_extractor_FRDMK64F.axf" "note_extractor_FRDMK64F.bin" ; # checksum -p MK64FN1M0xxx12 -d "note_extractor_FRDMK64F.bin";
+	-arm-none-eabi-size "fft_note_extractor.axf"; # arm-none-eabi-objcopy -v -O binary "fft_note_extractor.axf" "fft_note_extractor.bin" ; # checksum -p MK64FN1M0xxx12 -d "fft_note_extractor.bin";
 	-@echo ' '
 
 .PHONY: all clean dependents post-build

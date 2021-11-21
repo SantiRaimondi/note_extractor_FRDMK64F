@@ -1,5 +1,7 @@
-board/board.o board/board.d: ../board/board.c ../board/board.h \
- ../board/clock_config.h \
+source/fft_note_extractor.o source/fft_note_extractor.d: \
+ ../source/fft_note_extractor.c \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/board.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/clock_config.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/fsl_device_registers.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12.h \
@@ -14,12 +16,19 @@ board/board.o board/board.d: ../board/board.c ../board/board.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_gpio.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_port.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/peripherals.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/pin_mux.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/clock_config.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\utilities/fsl_debug_console.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\component\serial_manager/fsl_component_serial_manager.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\component\serial_manager/fsl_component_serial_port_uart.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\component\uart/fsl_adapter_uart.h
-../board/board.h:
-../board/clock_config.h:
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\component\uart/fsl_adapter_uart.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS\DSP\Include/arm_math.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/cmsis_compiler.h \
+ ../source/y_thresh_avg.h
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/board.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/clock_config.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/fsl_device_registers.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12.h:
@@ -34,7 +43,14 @@ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspac
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_gpio.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_port.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/peripherals.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/pin_mux.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/clock_config.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\utilities/fsl_debug_console.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\component\serial_manager/fsl_component_serial_manager.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\component\serial_manager/fsl_component_serial_port_uart.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\component\uart/fsl_adapter_uart.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS\DSP\Include/arm_math.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/cmsis_compiler.h:
+../source/y_thresh_avg.h:

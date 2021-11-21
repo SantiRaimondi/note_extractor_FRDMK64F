@@ -1,5 +1,0 @@
-C:\Users\santi\Desktop\Datardos\Facultad\Segundo semestre Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/core_cm4.h:1809:22:__NVIC_SetPriority	16	static
-C:\Users\santi\Desktop\Datardos\Facultad\Segundo semestre Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/core_cm4.h:2017:26:SysTick_Config	16	static
-../source/note_extractor.c:47:6:SysTick_Handler	16	static
-../source/note_extractor.c:83:6:swap	24	static
-../source/note_extractor.c:94:5:main	48	static

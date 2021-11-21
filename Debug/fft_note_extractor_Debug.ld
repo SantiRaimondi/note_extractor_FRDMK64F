@@ -6,11 +6,11 @@
  * Generated linker script file for MK64FN1M0xxx12
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.4.0 [Build 6224] [2021-07-15] on 17 nov. 2021 10:21:06
+ * MCUXpresso IDE v11.4.0 [Build 6224] [2021-07-15] on 20 nov. 2021 19:00:36
  */
 
-INCLUDE "note_extractor_Debug_library.ld"
-INCLUDE "note_extractor_Debug_memory.ld"
+INCLUDE "fft_note_extractor_Debug_library.ld"
+INCLUDE "fft_note_extractor_Debug_memory.ld"
 
 ENTRY(ResetISR)
 
