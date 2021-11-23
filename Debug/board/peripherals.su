@@ -1,2 +1,4 @@
-../board/peripherals.c:44:6:BOARD_InitPeripherals	4	static
-../board/peripherals.c:51:6:BOARD_InitBootPeripherals	8	static
+C:\Users\santi\Desktop\Datardos\Facultad\Segundo semestre Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_dac.h:187:20:DAC_Enable	16	static
+../board/peripherals.c:100:13:DAC0_init	8	static
+../board/peripherals.c:114:6:BOARD_InitPeripherals	8	static
+../board/peripherals.c:123:6:BOARD_InitBootPeripherals	8	static

@@ -17,6 +17,7 @@ source/fft_note_extractor.o source/fft_note_extractor.d: \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_gpio.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_port.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/peripherals.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_dac.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/pin_mux.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/clock_config.h \
  C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12.h \
@@ -44,6 +45,7 @@ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspac
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_gpio.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_port.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/peripherals.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_dac.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/pin_mux.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\board/clock_config.h:
 C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12.h:
