@@ -1,31 +1,31 @@
 board/pin_mux.o board/pin_mux.d: ../board/pin_mux.c \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/fsl_device_registers.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/core_cm4.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/cmsis_version.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/cmsis_compiler.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/cmsis_gcc.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/system_MK64F12.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12_features.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common_arm.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_clock.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_port.h \
- C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_gpio.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_common.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\device/fsl_device_registers.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\device/MK64F12.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/core_cm4.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/cmsis_version.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/cmsis_compiler.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/cmsis_gcc.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\device/system_MK64F12.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\device/MK64F12_features.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_common_arm.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_clock.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_common.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_port.h \
+ C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_gpio.h \
  ../board/pin_mux.h
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/fsl_device_registers.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/core_cm4.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/cmsis_version.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/cmsis_compiler.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\CMSIS/cmsis_gcc.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/system_MK64F12.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\device/MK64F12_features.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common_arm.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_clock.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_common.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_port.h:
-C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\fft_note_extractor\drivers/fsl_gpio.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_common.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\device/fsl_device_registers.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\device/MK64F12.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/core_cm4.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/cmsis_version.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/cmsis_compiler.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/cmsis_gcc.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\device/system_MK64F12.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\device/MK64F12_features.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_common_arm.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_clock.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_common.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_port.h:
+C\:\Users\santi\Desktop\Datardos\Facultad\Segundo\ semestre\ Quinto\DSP\workspace\note_extractor_FRDMK64F\drivers/fsl_gpio.h:
 ../board/pin_mux.h:

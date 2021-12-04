@@ -1,4 +1,4 @@
-C:\Users\santi\Desktop\Datardos\Facultad\Segundo semestre Quinto\DSP\workspace\fft_note_extractor\CMSIS/core_cm4.h:1809:22:__NVIC_SetPriority	16	static
-C:\Users\santi\Desktop\Datardos\Facultad\Segundo semestre Quinto\DSP\workspace\fft_note_extractor\CMSIS/core_cm4.h:2017:26:SysTick_Config	16	static
-../source/fft_note_extractor.c:30:6:SysTick_Handler	4	static
-../source/fft_note_extractor.c:39:5:main	14672	dynamic
+C:\Users\santi\Desktop\Datardos\Facultad\Segundo semestre Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/core_cm4.h:1809:22:__NVIC_SetPriority	16	static
+C:\Users\santi\Desktop\Datardos\Facultad\Segundo semestre Quinto\DSP\workspace\note_extractor_FRDMK64F\CMSIS/core_cm4.h:2017:26:SysTick_Config	16	static
+../source/fft_note_extractor.c:33:6:SysTick_Handler	4	static
+../source/fft_note_extractor.c:42:5:main	14640	static

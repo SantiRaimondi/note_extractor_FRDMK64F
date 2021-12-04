@@ -16,12 +16,15 @@
 #define FFT_SIZE (uint32_t) 1024
 #define FUNDAMENTALS_SIZE 	50 			/* Cantidad de notas que se pueden detectar. Numero arbitrario, se puede modificar a lo que se crea conveniente */
 
-#define SAMPLE_FRECUENCY_KHZ	6
-#define SAMPLE_PERIOD_US 		166 	/* Equivale a Fs de 6[k/s] */
+#define SAMPLE_FRECUENCY_KHZ (uint32_t) 6		/* Frecuencia de muestreo para reconstruir los tonos */
+#ifdef SAMPLE_FRECUENCY_KHZ
+	#define SAMPLE_PERIOD_US (uint32_t) (1000U/SAMPLE_FRECUENCY_KHZ)	/* No es la forma mas precisa pero funciona */
+#endif
+
 #define SYSTICK_CLK_MHZ 		120		/* Frecuencia del Systick_CLK en MHZ */
 
 #define DAC_BUFFER_INDEX 		0U		/* Como no se utiliza el buffer, siempre es 0 este valor */
-#define DC_OFFSET (uint16_t) 32767		/* Offset de DC que trae la señal. */
+#define DC_OFFSET (uint16_t) 32767		/* Offset de DC que trae la señal (mitad del rango dinamico si se considera un numero de 16bits). */
 
 #define DURATION_MS 			500		/* Cantidad de tiempo en segundos que se va a reproducir cada nota en [ms] */
 
@@ -77,7 +80,7 @@ int main(void){
 	arm_fill_f32(0, fundamentals, FUNDAMENTALS_SIZE); /* Se borran los yuyos que tengan */
 
     /* Se llena la tabla */
-    for(uint16_t i = 0; i < FFT_SIZE; i++)
+    for(i = 0; i < FFT_SIZE; i++)
     {
     	f[i] = (STEP * i);
     }
@@ -134,9 +137,6 @@ int main(void){
         i++;
     }
 
-    while(1)
-    {}
-
     /******************************************************************
      * ESTA PARTE DE REGENERAR LA CANCION NO ESTÁ TERMINADA TODAVIA
      ******************************************************************
@@ -150,7 +150,7 @@ int main(void){
 //     * El tamaño del arreglo simula que son muestras tomadas con una Fs de valor SAMPLE_FRECUENCY.
 //     * En este caso SAMPLE_FRECUENCY = 2000 que es sobrado para nuestras notas musicales de valor maximo no superior a 400 [Hz]. */
 //    float32_t recreate_song[recreate_size];
-//    float32_t counter_timer_sec = 0;	/* Variable que simula el paso del tiempo para obtener los valores del seno */
+
 //    for(i = 0; i < i_notes; i++)
 //    {
 //    	for(j = 0; j < j_limit; j++)
@@ -168,35 +168,52 @@ int main(void){
 //		counter_timer_sec += (float32_t) j*(1/(SAMPLE_FRECUENCY_KHZ*1000.0f)); /* Se multiplica por 1000 para que quede en segundos */
 //	}
 //
-//    /* Tiene  un reloj de 120MHz.
-//     * Si se carga correctamente, devuelve 0UL.
-//     */
-//	if(SysTick_Config(SYSTICK_CLK_MHZ*SAMPLE_PERIOD_US) != 0UL)
-//    {
-//		PRINTF("ERROR!!");
-//    	while(1)
-//    	{}
-//    }
-//
-//	index = 0; /* Reutilizamos la variable */
-//
-//    while(1)
-//    {
-//		if(systick_flag)
-//		{
-//			systick_flag = false;
-//			int16_t value;
-//			PRINTF("%f \r\n", recreate_song[index]);
-//			value = (int16_t) (recreate_song[index]*(DC_OFFSET-1));
-//			/* Se convierte el float a uint16_t que al ser entero permite operaciones bitwise necesaria para el manejo del DAC*/
-//			DAC_SetBufferValue(DAC0, DAC_BUFFER_INDEX, (value+DC_OFFSET)>>4);
-//			index ++;
-//
-////			if(index >= SAMPLE_FRECUENCY_KHZ*DURATION_MS) // Para DEBUG, para 1 solo tono
-//			if(index >= SAMPLE_FRECUENCY_KHZ*DURATION_MS*i_notes)
-//				index = 0;
-//		}
-//    }
+    /* Tiene  un reloj de 120MHz.
+     * Si se carga correctamente, devuelve 0UL.
+     */
+	if(SysTick_Config(SYSTICK_CLK_MHZ*SAMPLE_PERIOD_US) != 0UL)
+    {
+		PRINTF("ERROR!!");
+    	while(1)
+    	{}
+    }
+
+	index = 0; /* Reutilizamos la variable */
+	i = 0;
+
+	uint32_t counter_timer_us = 0;	/* Variable que simula el paso del tiempo para obtener los valores del seno */
+	float32_t playing_note = fundamentals[i];	/* Nota que se va a reproducir durante DURATION_MS cantidad de tiempo */
+
+    while(1)
+    {
+		if(systick_flag)
+		{
+			systick_flag = false;
+
+			float32_t sin_value = 0;
+			sin_value = arm_sin_f32(2*PI*playing_note*counter_timer_us/1000000);
+
+//			PRINTF("%f \r\n", sin_value+1); /* Se agrega un offset para ver valores negativos en el SerialOscilloscope */
+
+			/* Se convierte el float a int16_t que al ser entero permite operaciones bitwise necesaria para el manejo del DAC*/
+			q15_t output_note = 0;
+			output_note = (q15_t) (sin_value * DC_OFFSET);
+			DAC_SetBufferValue(DAC0, DAC_BUFFER_INDEX, (output_note+DC_OFFSET)>>4);
+
+			counter_timer_us += SAMPLE_PERIOD_US;
+			index ++;
+
+			if(index >= SAMPLE_FRECUENCY_KHZ*DURATION_MS)
+			{
+				index = 0;
+				counter_timer_us = 0;
+				i ++;
+				if(i >= i_notes)	/* Se reproducen las notas de  la cancion de manera circular */
+					i = 0;
+				playing_note = fundamentals[i];
+			}
+		}
+    }
 
     return 0 ;
 }
