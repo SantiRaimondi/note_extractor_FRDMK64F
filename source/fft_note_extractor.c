@@ -20,13 +20,13 @@
 #ifdef SAMPLE_FRECUENCY_KHZ
 	#define SAMPLE_PERIOD_US (uint32_t) (1000U/SAMPLE_FRECUENCY_KHZ)	/* No es la forma mas precisa pero funciona */
 #endif
-
+#define DURATION_MS 			500		/* Cantidad de tiempo en segundos que se va a reproducir cada nota en [ms] */
 #define SYSTICK_CLK_MHZ 		120		/* Frecuencia del Systick_CLK en MHZ */
 
 #define DAC_BUFFER_INDEX 		0U		/* Como no se utiliza el buffer, siempre es 0 este valor */
-#define DC_OFFSET (uint16_t) 32767		/* Offset de DC que trae la señal (mitad del rango dinamico si se considera un numero de 16bits). */
+#define DC_OFFSET (uint16_t) 32767		/* Offset de DC para sacar la señal por DAC (mitad del rango dinamico si se considera un numero de 16bits). */
 
-#define DURATION_MS 			500		/* Cantidad de tiempo en segundos que se va a reproducir cada nota en [ms] */
+
 
 volatile bool systick_flag = false;		/* Indica interrupcion de Systick */
 
@@ -138,38 +138,14 @@ int main(void){
     }
 
     /******************************************************************
-     * ESTA PARTE DE REGENERAR LA CANCION NO ESTÁ TERMINADA TODAVIA
+     * SE RECONSTRUYE LA CANCION EN BASE A LAS NOTAS DETECTADAS
      ******************************************************************
-     * */
+     */
 
-//    /* Se reconstruye el arreglo en base a los tonos procesados */
-//    uint16_t j_limit = SAMPLE_FRECUENCY_KHZ*DURATION_MS; /* Limite del indice j para recorrer el arreglo */
-//    uint32_t recreate_size = j_limit * i_notes;
-////    uint32_t recreate_size = j_limit*1;	// Para DEBUG para generar un solo tono
-//    /* Arreglo con la cancion reconstruida a partir del procesamiento de las notas en el dominio del tiempo
-//     * El tamaño del arreglo simula que son muestras tomadas con una Fs de valor SAMPLE_FRECUENCY.
-//     * En este caso SAMPLE_FRECUENCY = 2000 que es sobrado para nuestras notas musicales de valor maximo no superior a 400 [Hz]. */
-//    float32_t recreate_song[recreate_size];
-
-//    for(i = 0; i < i_notes; i++)
-//    {
-//    	for(j = 0; j < j_limit; j++)
-//    	{
-//    		index = i*j_limit+j;
-//			recreate_song[index] = arm_sin_f32(2*PI*fundamentals[i]*2*counter_timer_sec);	/* El segundo x2 es porque la fft da la frec. en la mitad del espectro */
-//			counter_timer_sec += (float32_t) j*(1/(SAMPLE_FRECUENCY_KHZ*1000.0f)); /* Se multiplica por 1000 para que quede en segundos */
-//    	}
-//    }
-//
-//    /* Para DEBUG, se genera un solo tono */
-//	for(j = 0; j < recreate_size; j++)
-//	{
-//		recreate_song[j] = arm_sin_f32(2*PI*fundamentals[0]*2*counter_timer_sec);	/* El segundo x2 es porque la fft da la frec. en la mitad del espectro */
-//		counter_timer_sec += (float32_t) j*(1/(SAMPLE_FRECUENCY_KHZ*1000.0f)); /* Se multiplica por 1000 para que quede en segundos */
-//	}
-//
     /* Tiene  un reloj de 120MHz.
      * Si se carga correctamente, devuelve 0UL.
+     *
+     * Se utiliza para generar interrupciones periodicas para actualizar el DAC.
      */
 	if(SysTick_Config(SYSTICK_CLK_MHZ*SAMPLE_PERIOD_US) != 0UL)
     {
@@ -178,12 +154,14 @@ int main(void){
     	{}
     }
 
-	index = 0; /* Reutilizamos la variable */
+	/* Reutilizamos las variables */
+	index = 0;
 	i = 0;
 
 	uint32_t counter_timer_us = 0;	/* Variable que simula el paso del tiempo para obtener los valores del seno */
 	float32_t playing_note = fundamentals[i];	/* Nota que se va a reproducir durante DURATION_MS cantidad de tiempo */
 
+	/* Entramos en un bucle infinito donde se reproducen las notas encontradas de forma circular */
     while(1)
     {
 		if(systick_flag)
